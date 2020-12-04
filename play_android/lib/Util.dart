@@ -1,6 +1,9 @@
 
+
 import 'package:banner/banner.dart';
 import 'package:flutter/material.dart';
+import 'package:play_android/search/SearchPage.dart';
+import 'package:play_android/widget/IconText.dart';
 
 import 'bean/home_banner_result_entity.dart';
 import 'home/DetailPage.dart';
@@ -48,6 +51,37 @@ class Util {
           return DetailPage(data.title, data.url);
         }));
       },
+    );
+  }
+
+
+  static topToolsBar(context){
+   return  AppBar(
+      title: Row(
+        children: [
+          Text("玩安卓"),
+          Spacer(),
+          GestureDetector(
+            child:IconText(
+              "",
+              style: TextStyle(fontSize: 18),
+              padding: EdgeInsets.only(left: 10,right: 5),
+              icon: Icon(
+                Icons.search,
+                color: Colors.white,
+                size: 32,
+              ),
+            ),
+            onTap: (){
+
+              Navigator.push(context, MaterialPageRoute(builder: (_) {
+                return new SearchPage();
+              }));
+            },
+          )
+
+        ],
+      ),
     );
   }
 }

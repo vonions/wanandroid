@@ -37,6 +37,7 @@ class _DiscoverPage extends State<DiscoverPage> {
     if (hotNet == null) {
       _getHotNetUrl();
       return Scaffold(
+
         body: Container(
           child: Util.LoadingWidget(),
           alignment: Alignment.center,
@@ -45,6 +46,7 @@ class _DiscoverPage extends State<DiscoverPage> {
     }
 
     return SingleChildScrollView(
+
       child: Column(
         children: [
           Util.bannerView(bannerResult, context),
@@ -58,8 +60,8 @@ class _DiscoverPage extends State<DiscoverPage> {
           ),
           //TAG
           Container(
-
             child: Tags(
+//              itemCount: hotNet.data.length > 10 ? 10 : hotNet.data.length,
               itemCount: hotNet.data.length,
               itemBuilder: (int index) {
                 return Tooltip(
@@ -80,7 +82,6 @@ class _DiscoverPage extends State<DiscoverPage> {
               },
             ),
           ),
-
         ],
       ),
     );

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:play_android/home/HomePage.dart';
 import 'package:play_android/home/DiscoverPage.dart';
 import 'package:play_android/home/MinePage.dart';
+import 'package:play_android/search/SearchPage.dart';
+import 'package:play_android/widget/IconText.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner:false,
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -57,9 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("玩安卓"),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         items: bottomNavigation,
         currentIndex: currentIndex,
@@ -92,11 +91,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("首页")),
     BottomNavigationBarItem(
         backgroundColor: Colors.white,
-        icon: Icon(Icons.message),
+        icon: Icon(Icons.directions_walk),
         title: Text("发现")),
     BottomNavigationBarItem(
         backgroundColor: Colors.white,
-        icon: Icon(Icons.domain),
+        icon: Icon(Icons.perm_identity),
         title: Text("我的")),
   ];
 
